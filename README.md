@@ -1,2 +1,2 @@
 # qbl
-Qabalah Tree of Life
+Qabalah Tree of Life.
