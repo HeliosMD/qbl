@@ -1,0 +1,115 @@
+<head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body>
+<script>
+    var sw = screen.width - 15;
+    var sh = screen.height - 180;
+    var cx = sw / 2;
+    var cy = sh / 2;
+    var xx = cx;
+    var xy = cy;
+</script>
+<div class="content">
+<div class="graphic">
+<script type="application/processing">
+float pi = 3.14159;
+float g = pi/6;
+int r = sh/7;
+int w = 0;
+int xx = 0;
+int yy = 0;
+cy = cy/2;
+
+void setup() {
+	size(sw, sh);
+}
+
+void draw() {
+
+	background(16);
+	stroke(255);
+
+	strokeWeight(1);
+
+	w = w + 5;
+	point(cx,cy);
+
+	fill(16,16,16,0);
+
+	if(w>10){ellipse(cx,cy,2*r,2*r);}
+	if(w>20)ellipse(cx,cy+r,2*r,2*r);
+	if(w>30)ellipse(cx,cy+2*r,2*r,2*r);
+	if(w>40)ellipse(cx,cy+3*r,2*r,2*r);
+
+
+	if(w>100){fill(255,255,255,128); ellipse(cx,cy,r*4/5,r*4/5);}
+	if(w>200){fill(128,128,128,128); ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r,r*4/5,r*4/5);}
+	if(w>300){fill(16,16,16,128); ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r,r*4/5,r*4/5);}
+
+	if(w>400){fill(0,0,255,128); ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r+r,r*4/5,r*4/5);}
+	if(w>500){fill(255,0,0,128); ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r+r,r*4/5,r*4/5);}
+	if(w>600){fill(255,192,0,128); ellipse(cx,cy+2*r,r*4/5,r*4/5);}
+
+
+	if(w>700){fill(0,128,0,128); ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r+2*r,r*4/5,r*4/5);}
+	if(w>800){fill(255,128,0,128); ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r+2*r,r*4/5,r*4/5);}
+	if(w>900){fill(128,0,128,128); ellipse(cx,cy+3*r,r*4/5,r*4/5);}
+
+	if(w>1000){fill(128,64,0,128); ellipse(cx,cy+4*r,r*4/5,r*4/5);}
+
+	fill(255);
+
+	if(w>100){ellipse(cx,cy,r*2/5,r*2/5);}
+	if(w>200){ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r,r*2/5,r*2/5);}
+	if(w>300){ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r,r*2/5,r*2/5);}
+
+	if(w>400){ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r+r,r*2/5,r*2/5);}
+	if(w>500){ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r+r,r*2/5,r*2/5);}
+	if(w>600){ellipse(cx,cy+2*r,r*2/5,r*2/5);}
+
+	if(w>700){ellipse(cx+sin(2*g)*r,cy+cos(2*g)*r+2*r,r*2/5,r*2/5);}
+	if(w>800){ellipse(cx-sin(2*g)*r,cy+cos(2*g)*r+2*r,r*2/5,r*2/5);}
+	if(w>900){ellipse(cx,cy+3*r,r*2/5,r*2/5);}
+
+	if(w>1000){ellipse(cx,cy+4*r,r*2/5,r*2/5);}
+	
+	strokeWeight(7);
+
+	if(w>1100){line(cx,cy,cx+sin(2*g)*r,cy+cos(2*g)*r);}
+	if(w>1300){line(cx,cy,cx,cy+2*r);}
+	if(w>1200){line(cx,cy,cx-sin(2*g)*r,cy+cos(2*g)*r);}
+
+	if(w>1400){line(cx+sin(2*g)*r,cy+cos(2*g)*r,cx-sin(2*g)*r,cy+cos(2*g)*r);}
+	if(w>1500){line(cx+sin(2*g)*r,cy+cos(2*g)*r,cx,cy+2*r);}
+	if(w>1600){line(cx+sin(2*g)*r,cy+cos(2*g)*r,cx+sin(2*g)*r,cy+cos(2*g)*r+r);}
+
+	if(w>1700){line(cx-sin(2*g)*r,cy+cos(2*g)*r,cx,cy+2*r);}
+	if(w>1800){line(cx-sin(2*g)*r,cy+cos(2*g)*r,cx-sin(2*g)*r,cy+cos(2*g)*r+r);}
+
+	if(w>1900){line(cx+sin(2*g)*r,cy+cos(2*g)*r+r,cx-sin(2*g)*r,cy+cos(2*g)*r+r);}
+	if(w>2000){line(cx+sin(2*g)*r,cy+cos(2*g)*r+r,cx,cy+2*r);}
+	if(w>2100){line(cx+sin(2*g)*r,cy+cos(2*g)*r+r,cx+sin(2*g)*r,cy+cos(2*g)*r+2*r);}
+
+	if(w>2200){line(cx-sin(2*g)*r,cy+cos(2*g)*r+r,cx,cy+2*r);}
+	if(w>2300){line(cx-sin(2*g)*r,cy+cos(2*g)*r+r,cx-sin(2*g)*r,cy+cos(2*g)*r+2*r);}
+
+	if(w>2400){line(cx,cy+2*r,cx+sin(2*g)*r,cy+cos(2*g)*r+2*r);}
+	if(w>2500){line(cx,cy+2*r,cx,cy+3*r);}
+	if(w>2600){line(cx,cy+2*r,cx-sin(2*g)*r,cy+cos(2*g)*r+2*r);}
+
+	if(w>2700){line(cx+sin(2*g)*r,cy+cos(2*g)*r+2*r,cx-sin(2*g)*r,cy+cos(2*g)*r+2*r);}
+	if(w>2800){line(cx+sin(2*g)*r,cy+cos(2*g)*r+2*r,cx,cy+3*r);}
+	if(w>2900){line(cx+sin(2*g)*r,cy+cos(2*g)*r+2*r,cx,cy+4*r);}
+
+	if(w>3000){line(cx-sin(2*g)*r,cy+cos(2*g)*r+2*r,cx,cy+3*r);}
+	if(w>3100){line(cx-sin(2*g)*r,cy+cos(2*g)*r+2*r,cx,cy+4*r);}
+
+	if(w>3200){line(cx,cy+3*r,cx,cy+4*r);}
+	if(w>4000){w=0;}
+}
+
+
+</script>
+<canvas style="image-rendering: -moz-crisp-edges ! important;" id="__processing0" tabindex="0" width=sw height=sh ></canvas>
+</div>
+</div>
+<script src="js/processing.js" type="text/javascript"></script>
